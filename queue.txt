@@ -1,0 +1,11 @@
+void explainQueue() {
+	std::queue<int> q;
+	q.push(1);
+	q.push(2);
+	q.push(4);
+	q.back() +=5;
+	std::cout<<q.back(); // 9
+	std::cout<<q.front();
+	q.pop();
+	std::cout<<q.front();
+}

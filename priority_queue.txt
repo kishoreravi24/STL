@@ -1,0 +1,22 @@
+//priority queue
+void explainPQ() {
+	//maximum
+	std::priority_queue<int> pq;
+	pq.push(5);
+	pq.push(3);
+	pq.push(8);
+	pq.push(1);
+	pq.push(10);
+	// {10,8,5,3,1}
+	pq.top() -> 10
+	pq.pop() -> 8,5,3,1
+
+	// minimum 
+	std::priority_queue<int, std::vector<int>,std::greater<int>> pq;
+	pq.push(5); //5
+	pq.push(2); //{2,5}
+	pq.push(1); //{1,2,5}
+	pq.push(10) //{1,2,5,10}
+
+	pq.top(2);
+}

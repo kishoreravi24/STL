@@ -1,0 +1,15 @@
+// like set, ordered, unique
+
+void explainMap() {
+	std::map<int,int> map;
+	std::map<int,std::pair<int,int>> map;
+	std::map<std::pair<int,int>,int> map;
+
+	map[1] = 2;
+	map.insert({2,4});
+	map[{2,4}] = 10;
+
+	for(auto it:map){
+		std::cout<<it.first<<" "<<it.second;
+	}
+}

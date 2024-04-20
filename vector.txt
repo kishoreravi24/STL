@@ -1,0 +1,86 @@
+stores element like array but no size required it is dynamic
+
+void explainVector() {
+	std::vector<int> v;
+	v.push_back(1);
+	v.emplace_back(2);
+
+	std::vector<std::pair<int,int>> vect;
+
+	vect.push_back({1,2});
+	vect.emplace_back(1,2);
+
+	std::vector<int> v(5,100); // a container consist of 5 instance with value 100.
+	{100,100,100,100,100}
+
+	std::vector<int> v(5) // no values 
+	std::vector<int> v(v1);
+}
+
+traverse or print value from the vector
+
+std::vector<int> v = {1,2,3,4,5};
+for(auto it=v.begin(),it!=v.end();it++){
+	std::cout<<*(it);
+}
+
+v.begin() returns the memory address of the value, we need points the address of it to get the value.
+
+
+v.end() also not points to the last value of the container eg: last value address is 100 means the v.end() points to 101, we need to decrement the value to get the value
+
+std::vector<int> v = {1,2,3,4,5};
+for(auto it=v.end();it!=v.begin();it--){
+    std::cout<<*(it)<<" ";
+}
+
+o/p:
+0 5 4 3 2
+
+notice no value means defalut value 0 will come and fix the code
+
+for(auto it=v.end()-1;it!=v.begin()-1;it--){
+	std::cout<<*(it)<<" ";
+}
+
+// alternate way to print
+
+for(auto it:v){
+	cout<<it<<" ";
+}
+
+// v.rbegin() -> {1,2,3,4,5} i.e points to 5 need to do it++ to move to 4
+
+v.rend -> --
+v.rbegin -> ++
+v.begin -> ++
+v.end -> --
+
+// erase
+v.erase(v.begin()+1)
+v.erase(v.begin()+2,v.begin()+4);
+
+//insert
+v.insert(v.begin(),300);
+v.insert(v.begin()+1,2,10);
+
+//copy
+std::vector<int> v1 = {1,2,3,4};
+std::vector<int> v2;
+v2.insert(v2.begin(),v1.begin(),v1.end());
+
+//size
+std::cout<<v.size();
+
+//pop_back
+std::cout<<v.pop_back();
+
+
+//v1 -> {10,20}
+//v2 -> {30,40}
+v1.swap(v2); //v1 -> {30,40}, v2-> {10,20}
+
+v.clear() // clear the vector
+
+
+
